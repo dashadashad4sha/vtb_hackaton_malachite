@@ -1,4 +1,17 @@
-from lemmanization import human_to_computer
+import requests
+from bs4 import BeautifulSoup as BS
+
+
+def tj_get_hrefs():
+    try:
+        r = requests.get(f'https://journal.tinkoff.ru/')
+        html = BS(r.content, 'html.parser')
+        href_in_code = html.find_all("a", class_="link--pdufU")
+        str_links = []
+        for i in href_in_code:
+            str_links.append(str(i.get("href")))
+    except:
+        return []
 
 
 def tj_title(html_code):
@@ -44,3 +57,4 @@ def tj_views(html_code):
     if text[-1] == "K":
         text = int(text[:-1]) * 1000
     return text
+
