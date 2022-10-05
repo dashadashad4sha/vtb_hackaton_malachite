@@ -10,6 +10,7 @@ def tj_get_hrefs():
         str_links = []
         for i in href_in_code:
             str_links.append(str(i.get("href")))
+        return str_links
     except:
         return []
 
