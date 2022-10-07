@@ -1,3 +1,11 @@
+import requests
+from bs4 import BeautifulSoup as BS
+import csv
+from tj import *
+from lenta import *
+from commersant import *
+from consultant import *
+from ixbt import *
 from banki import *
 
 
