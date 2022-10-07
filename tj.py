@@ -54,7 +54,7 @@ def tj_views(html_code):
     try:
         text = html_code.find("div", class_="_27USv _3KBfn").text  #.encode().decode('cp1251', 'ignore')
     except:
-        return
+        return 2000
     if text[-1] == "K":
         text = int(text[:-1]) * 1000
     return text
