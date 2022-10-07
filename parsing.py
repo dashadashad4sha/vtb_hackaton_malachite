@@ -7,6 +7,7 @@ from commersant import *
 from consultant import *
 from ixbt import *
 from banki import *
+from ria import *
 
 
 def parse(f_text, f_title, f_lead_text, f_tags, f_views, get_hrefs, href):
@@ -26,13 +27,14 @@ def parse(f_text, f_title, f_lead_text, f_tags, f_views, get_hrefs, href):
             continue
 
 
-istochniki = [[tj_text, tj_title, tj_lead_text, tj_tags, tj_views, tj_get_hrefs(), 'https://journal.tinkoff.ru/'],
+istochniki = [[ria_text, ria_title, ria_lead_text, ria_tags, ria_views, ria_get_hrefs(), ''],
+              [tj_text, tj_title, tj_lead_text, tj_tags, tj_views, tj_get_hrefs(), 'https://journal.tinkoff.ru/'],
               [lenta_text, lenta_title, lenta_lead_text, lenta_tags, lenta_views, lenta_get_hrefs(1),
                'https://lenta.ru'], #именно этот источник работает супер медленно, его можно бует удалить
-              [cms_text, cms_title, cms_lead_text, cms_tags, cms_views, cms_get_hrefs(), ''],
+              [cms_text, cms_title, cms_lead_text, cms_tags, cms_views, kommersant_get_hrefs(), ''],
               [consultant_text, consultant_title, consultant_lead_text, consultant_tags,
                consultant_views, consultant_get_hrefs(1), 'http://www.consultant.ru'],
-              [ixbt_text, ixbt_title, ixbt_lead_text, ixbt_tags, ixbt_views, ixbt_get_hrefs(), 'https://www.ixbt.com'],
+              [ixbt_text, ixbt_title, ixbt_lead_text, consultant_tags, consultant_views, ixbt_get_hrefs(), 'https://www.ixbt.com'],
               [banki_get_hrefs, banki_title, banki_lead_text, banki_tags, banki_views, banki_get_hrefs(1),
                'https://www.banki.ru']
               ]
