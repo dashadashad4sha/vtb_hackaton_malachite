@@ -1,11 +1,11 @@
 import csv
-from parsing.tj import *
-from parsing.lenta import *
-from parsing.commersant import *
-from parsing.consultant import *
-from parsing.ixbt import *
-from parsing.banki import *
-from parsing.ria import *
+from parser.tj import *
+from parser.lenta import *
+from parser.commersant import *
+from parser.consultant import *
+from parser.ixbt import *
+from parser.banki import *
+from parser.ria import *
 
 
 def parse(f_text, f_title, f_lead_text, get_hrefs, href):
