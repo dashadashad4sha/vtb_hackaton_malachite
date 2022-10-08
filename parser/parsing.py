@@ -1,13 +1,13 @@
 import requests
 from bs4 import BeautifulSoup as BS
 import csv
-from tj import *
-from lenta import *
-from commersant import *
-from consultant import *
-from ixbt import *
-from banki import *
-from ria import *
+from .tj import *
+from .lenta import *
+from .commersant import *
+from .consultant import *
+from .ixbt import *
+from .banki import *
+from .ria import *
 
 
 def parse(f_text, f_title, f_lead_text, f_tags, f_views, get_hrefs, href):
@@ -40,9 +40,14 @@ istochniki = [[ria_text, ria_title, ria_lead_text, ria_tags, ria_views, ria_get_
               ]
 
 
-with open("csv_file.csv", "w", encoding="cp1251") as file:  # human_text в модельке убираем, это тлько для аналитика
-    writer = csv.writer(file)
-    writer.writerow(("human_text", "machine_text", "title", "tags", "undername", "href", "views", "rating"))
-    for i in range(0, len(istochniki)):
-        print(i)
-        parse(*istochniki[i])
+def start_parse():
+    with open("csv_file.csv", "w", encoding="cp1251") as file:  # human_text в модельке убираем, это тлько для аналитика
+        writer = csv.writer(file)
+        writer.writerow(("human_text", "machine_text", "title", "tags", "undername", "href", "views", "rating"))
+        for i in range(0, len(istochniki)):
+            print(i)
+            parse(*istochniki[i])
+
+
+if __name__ == '__main__':
+    start_parse()
