@@ -4,6 +4,8 @@
 ```shell
 python -m venv venv
 pip install -r requirements.txt
+pip install pandas
+pip install sklearn
 ```
 ### Парсинг данных (не обязательно. собранный датафрейм и обученная модель уже есть в файлах проекта)
 В папке parser находятся файлы для создания csv файла. Для запуска надо перейти в директорию командой 
