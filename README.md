@@ -7,7 +7,7 @@ pip install -r requirements.txt
 pip install pandas
 pip install sklearn
 pip install schedule
-pip install telebot
+pip install pyTelegramBotApi
 ```
 ### Парсинг данных (не обязательно. собранный датафрейм и обученная модель уже есть в файлах проекта)
 В папке parser находятся файлы для создания csv файла. Для запуска надо перейти в директорию командой 
