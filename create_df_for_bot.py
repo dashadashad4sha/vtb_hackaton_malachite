@@ -1,11 +1,11 @@
 import csv
-from parser.tj import *
-from parser.lenta import *
-from parser.commersant import *
-from parser.consultant import *
-from parser.ixbt import *
-from parser.banki import *
-from parser.ria import *
+from tj import *
+from lenta import *
+from commersant import *
+from consultant import *
+from ixbt import *
+from banki import *
+from ria import *
 
 
 def parse(f_text, f_title, f_lead_text, get_hrefs, href):
@@ -25,8 +25,8 @@ def parse(f_text, f_title, f_lead_text, get_hrefs, href):
 
 
 istochniki = [[tj_text, tj_title, tj_lead_text, tj_get_hrefs(), 'https://journal.tinkoff.ru/'],
-              [lenta_text, lenta_title, lenta_lead_text, lenta_get_hrefs(1), 'https://lenta.ru'],
-              [cms_text, cms_title, cms_lead_text, kommersant_get_hrefs(), ''],
+              # [lenta_text, lenta_title, lenta_lead_text, lenta_get_hrefs(1), 'https://lenta.ru'],
+              [cms_text, cms_title, cms_lead_text, cms_get_hrefs(), ''],
               [consultant_text, consultant_title, consultant_lead_text, consultant_get_hrefs(1), 'http://www.consultant.ru'],
               [ixbt_text, ixbt_title, ixbt_lead_text, ixbt_get_hrefs(), 'https://www.ixbt.com'],
               [banki_text, banki_title, banki_lead_text, banki_get_hrefs(1), 'https://www.banki.ru'],
@@ -38,4 +38,5 @@ def start_parse():
         writer = csv.writer(file)
         writer.writerow(("text", "title", "lead_text", "href", "rating"))
         for i in range(0, len(istochniki)):
+            print("im parse")
             parse(*istochniki[i])
