@@ -1,6 +1,8 @@
 import pandas as pd
 from ml import prediction_for_acc, prediction_for_gd
 from no_doubles import doubles_find
+
+
 dataset_example = pd.read_csv(f"csv_file.csv", encoding='cp1251')
 
 
@@ -18,3 +20,11 @@ def super_main_def(role, dataset):
     # sorted_ds = doubles_find(sorted_ds)
 
     return sorted_ds["href"].head()
+
+
+dafr = super_main_def("Гендир", dataset_example)
+
+# print(dafr)
+
+def beauty_news(df):
+    pass
