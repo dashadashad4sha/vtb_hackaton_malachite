@@ -15,6 +15,6 @@ def super_main_def(role, dataset):
 
     sorted_ds = dataset.sort_values(by='raiting', ascending=False).head(10)
 
-    sorted_ds = doubles_find(sorted_ds)
+    # sorted_ds = doubles_find(sorted_ds)
 
     return sorted_ds["href"].head()
